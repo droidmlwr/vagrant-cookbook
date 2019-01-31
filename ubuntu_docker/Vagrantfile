@@ -7,22 +7,22 @@ Vagrant.configure("2") do |config|
   config.vm.boot_timeout = 600
   config.vm.box = "ubuntu/bionic64"
   config.vm.box_check_update = true
-  config.vm.hostname = "BionicDocker"
   config.vm.network = "public_network"
 
   # virtualbox provisioning using VBox Manage
   config.vm.provider "virtualbox" do |vb|
+    v.customize ["modifyvm", :id, "--basefolder", "D:\vagrantData\ubuntu_docker\"]
+    v.name = "BionicDocker"
     v.gui = false
     v.cpus = 2
     v.memory = 2048
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
-    v.customize [""]
   end
 
     # SHELL PROVISIONING
    config.vm.provision "shell", inline: <<-SHELL
-     apt-get update && upgrade -y
-     apt-get install -y vim
+     apt-get -y update && upgrade 
+     apt-get -y install vim
      apt-get -y install python-pip
      echo "This is an Ubuntu 18.04 LTS box built for use with Docker!"
    SHELL
