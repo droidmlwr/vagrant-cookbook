@@ -1,2 +1,2 @@
 # vagrant-student-cookbook
-A collection of vagrant scripts to build machines for specific use-cases.
+A collection of a handful vagrant file I've used along the way.
