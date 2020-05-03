@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
    end
 
    # $0 is a path to shared dir on the host machine, $1 is absolute path of shared guest machine dir
-   config.vm.synced_folder "/tmp/sync", "/home/shiny/Documents/github/vagrant-cookbook/virtualbox/ubuntu_htb/sync", create: true
+   config.vm.synced_folder "/home/shiny/Documents/github/vagrant-cookbook/virtualbox/ubuntu_htb/sync", "/tmp/sync", create: true
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -32,9 +32,9 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get upgrade
-     apt-get install openvpn
-
-     apt-get install make
+     sudo apt-get install openvpn -y
+     sudo apt-get install binwalk -y
+     sudo apt-get install make -y
 
      git clone https://github.com/radare/radare2.git
      chmod +x radare2/sys/install.sh
