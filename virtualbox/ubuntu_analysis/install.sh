@@ -1,4 +1,6 @@
 #! /bin/bash
+# These packages are already installed in droidmlwr/Xenial64
+# ; they are included here for rebuild purposes.
 apt-get -y upgrade
 
 apt-get -y install libffi-dev
