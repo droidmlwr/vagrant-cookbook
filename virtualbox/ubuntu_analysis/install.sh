@@ -23,6 +23,8 @@ groupadd inetsim
 sudo su vagrant
 apt-get install inetsim
 
+apt-get install -y libcanberra-gtk-module
+
 # sudo su
 # echo "deb http://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
 # wget -O - http://www.inetsim.org/inetsim-archive-signing-key.asc | apt-key add -
