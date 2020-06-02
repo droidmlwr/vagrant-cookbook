@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
 
    config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get upgrade -y
+     apt-get upgrade -y nodejs
      apt-get install -y youtube-dl
      apt-get install -y ffmpeg
      apt-get install -y vim
