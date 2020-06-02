@@ -1,4 +1,6 @@
 #! /bin/bash
+# These packages are already installed in droidmlwr/Xenial64
+# ; they are included here for rebuild purposes.
 apt-get -y upgrade
 
 apt-get -y install libffi-dev
@@ -22,6 +24,8 @@ sudo su
 groupadd inetsim
 sudo su vagrant
 apt-get install inetsim
+
+apt-get install -y libcanberra-gtk-module
 
 # sudo su
 # echo "deb http://www.inetsim.org/debian/ binary/" > /etc/apt/sources.list.d/inetsim.list
